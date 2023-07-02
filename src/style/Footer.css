@@ -1,0 +1,46 @@
+.footer {
+  width: 100%;
+  height: 100px;
+  background: #f1f1f1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+}
+
+.items {
+  width: 100px;
+  height: auto;
+}
+
+.paragraphe {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+  }
+
+  .items {
+    margin-bottom: 10px;
+  }
+
+  .paragraphe {
+    font-size: 0.7rem;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+}
