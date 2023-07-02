@@ -7,7 +7,6 @@ import Card from "../components/Card.js";
 import SearchBar from "../components/SearchBar.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carrousel from "../components/Carrousel.js";
-import Footer from "../components/Footer.js";
 
 const Home = () => {
   // State variables

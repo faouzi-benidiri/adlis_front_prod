@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer.js";
 
 const Rgpd = () => {
   return (
@@ -204,7 +203,7 @@ const Rgpd = () => {
           </p>
         </section>
       </div>
-      {/* <Footer /> */}
+  
     </>
   );
 };

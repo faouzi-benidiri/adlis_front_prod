@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../style/Contact.css";
-import Footer from "../components/Footer";
 import Contactmp4 from "../assets/video/contact.mp4";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -110,16 +109,21 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex-container">
-        <div className="form-container">
+      <div className="contact-container">
+        <div className="contact-video-container">
+          <video className="contact-video" autoPlay loop muted>
+            <source src={Contactmp4} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="contact-form-container">
           <form
-            // className="max-w-md mx-auto"
             action="https://getform.io/f/b1134f77-cc6e-42bf-89a4-376bbbf20da8"
             method="POST"
             encType="multipart/form-data"
             onSubmit={handleFormSubmit}
           >
-            <div className="mb-4">
+            <div className="contact-input-container">
               <label htmlFor="name">Prénom</label>
               <input
                 type="text"
@@ -140,7 +144,7 @@ const Contact = () => {
                 </div>
               )}
             </div>
-            <div className="mb-4">
+            <div className="contact-input-container">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -161,7 +165,7 @@ const Contact = () => {
                 </div>
               )}
             </div>
-            <div className="mb-4">
+            <div className="contact-input-container">
               <label htmlFor="subject">Sujet</label>
               <input
                 type="text"
@@ -182,15 +186,15 @@ const Contact = () => {
                 </div>
               )}
             </div>
-            <div className="mb-4">
+            <div className="contact-input-container">
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
                 name="message"
                 placeholder="Message"
                 required
-                rows="30"
-                cols="10"
+                rows="5"
+                cols="30"
               ></textarea>
               {errors.message && (
                 <div className="error-message">
@@ -207,15 +211,9 @@ const Contact = () => {
             <button type="submit">Envoyer</button>
           </form>
         </div>
-        <div className="contact-video-container">
-          <video className="contact-video" autoPlay loop muted>
-            <source src={Contactmp4} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
         {showBackToTop && (
           <button
-            className="fixed bottom-6 right-6 z-10 flex items-center justify-center w-10 h-10 text-white bg-gray-800 rounded-full shadow-lg focus:outline-none"
+            className="back-to-top-button"
             onClick={handleBackToTop}
             aria-label="Back to top"
           >
@@ -223,7 +221,6 @@ const Contact = () => {
           </button>
         )}
       </div>
-      <Footer />
     </>
   );
 };

@@ -45,15 +45,22 @@ const Dropdown = () => {
       <button className="button-primary" onClick={toggleDropdown}>
         Mon profil
       </button>
+
       <div className={`dropdown-options ${isOpen ? "open" : ""}`}>
         {currentUser === null ? (
           <>
-            <Link to="/signin">Connexion</Link>
-            <Link to="/signup">Inscription</Link>
+            <Link to="/signin" onClick={toggleDropdown}>
+              Connexion
+            </Link>
+            <Link to="/signup" onClick={toggleDropdown}>
+              Inscription
+            </Link>
           </>
         ) : (
           <>
-            <Link to="/profile">Profil</Link>
+            <Link to="/profile" onClick={toggleDropdown}>
+              Profil
+            </Link>
             <button onClick={logOutRequest}>Déconnexion</button>
           </>
         )}

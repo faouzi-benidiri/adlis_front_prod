@@ -1,7 +1,6 @@
 import React from "react";
 import Adlismp4 from "../assets/video/Adlismp4.mp4";
 import "../style/About.css"; // Import du fichier CSS pour les styles spécifiques à About
-import Footer from "../components/Footer.js";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 

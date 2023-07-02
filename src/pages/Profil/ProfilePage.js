@@ -70,15 +70,12 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="card">
-      <h1 className="card__title">Votre profil</h1>
-      <div className="card__content">
+    <div className="profile-card">
+      <h1 className="profile-card__title">Votre profil</h1>
+      <div className="profile-card__content">
         <DisplayProfileInfo profileData={profileData} onEdit={handleEdit} />
       </div>
-      <button
-        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
-        onClick={deleteProfileData}
-      >
+      <button className="delete-profile-button" onClick={deleteProfileData}>
         Supprimer mon compte
       </button>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EditProfileForm from "./EditProfileInfo";
+import EditProfileForm from "./EditProfileForm";
 
 const DisplayProfileInfo = ({ profileData, onEdit }) => {
   const [activeField, setActiveField] = useState(null);
@@ -21,51 +21,70 @@ const DisplayProfileInfo = ({ profileData, onEdit }) => {
   };
 
   return (
-    <div>
-      <h2>Informations du profil</h2>
-      <p>
-        <strong>Nom d'utilisateur:</strong> {profileData.username}
-        {activeField !== "username" && (
-          <button onClick={() => handleEditField("username")}>Modifier</button>
-        )}
-        {activeField === "username" && (
-          <EditProfileForm
-            field="username"
-            defaultValue={profileData.username}
-            onSave={handleSaveEdit}
-            onCancel={handleCancelEdit}
-          />
-        )}
-      </p>
-      <p>
-        <strong>Email:</strong> {profileData.email}
-        {activeField !== "email" && (
-          <button onClick={() => handleEditField("email")}>Modifier</button>
-        )}
-        {activeField === "email" && (
-          <EditProfileForm
-            field="email"
-            defaultValue={profileData.email}
-            onSave={handleSaveEdit}
-            onCancel={handleCancelEdit}
-          />
-        )}
-      </p>
-      <p>
-        <strong>Mot de passe:</strong>
-        {activeField !== "password" && (
-          <button onClick={() => handleEditField("password")}>Modifier</button>
-        )}
-        {activeField === "password" && (
-          <EditProfileForm
-            field="password"
-            defaultValue="*************"
-            onSave={handleSaveEdit}
-            onCancel={handleCancelEdit}
-            requireCurrentPassword
-          />
-        )}
-      </p>
+    <div className="profile-info-container">
+      <h2 className="profile-info-heading">Informations du profil</h2>
+      <div className="profile-info-row">
+        <div className="profile-info-card">
+          <p className="profile-info-label">Nom d'utilisateur:</p>
+          <p className="profile-info-value">{profileData.username}</p>
+          {activeField !== "username" && (
+            <button
+              className="profile-info-edit-button"
+              onClick={() => handleEditField("username")}
+            >
+              Modifier
+            </button>
+          )}
+          {activeField === "username" && (
+            <EditProfileForm
+              field="username"
+              defaultValue={profileData.username}
+              onSave={handleSaveEdit}
+              onCancel={handleCancelEdit}
+            />
+          )}
+        </div>
+        <div className="profile-info-card">
+          <p className="profile-info-label">Email:</p>
+          <p className="profile-info-value">{profileData.email}</p>
+          {activeField !== "email" && (
+            <button
+              className="profile-info-edit-button"
+              onClick={() => handleEditField("email")}
+            >
+              Modifier
+            </button>
+          )}
+          {activeField === "email" && (
+            <EditProfileForm
+              field="email"
+              defaultValue={profileData.email}
+              onSave={handleSaveEdit}
+              onCancel={handleCancelEdit}
+            />
+          )}
+        </div>
+        <div className="profile-info-card">
+          <p className="profile-info-label">Mot de passe:</p>
+          {activeField !== "password" && (
+            <button
+              className="profile-info-edit-button"
+              onClick={() => handleEditField("password")}
+            >
+              Modifier
+            </button>
+          )}
+          {activeField === "password" && (
+            <EditProfileForm
+              field="password"
+              defaultValue="*************"
+              onSave={handleSaveEdit}
+              onCancel={handleCancelEdit}
+              requireCurrentPassword
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };
