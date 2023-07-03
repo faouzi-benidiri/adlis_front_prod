@@ -8,7 +8,7 @@
 @import "./pages/signUpPage.css";
 @import "./pages/ResetPassword.css";
 @import "./pages/BookPage.css";
-@import "./components/form.css";
+@import "./Form.css";
 @import "./pages/ProfilePage.css";
 @import "./pages/EditProfileForm.css";
 @import "./pages/DisplayProfileInfo.css";

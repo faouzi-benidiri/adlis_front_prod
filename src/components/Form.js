@@ -56,59 +56,61 @@ const Form = (props) => {
 
   return (
     <>
-      <div className="container-test">
-        <div className="form-container">
+      <div class="custom-container">
+        <div class="custom-form-container">
           <form
-            className="form"
+            class="custom-form"
             onSubmit={handleSubmit(handleSubmitRequest, handleError)}
           >
             {username && (
-              <div className="form-group">
-                <label htmlFor="username">{username}</label>
+              <div class="custom-form-group">
+                <label for="custom-username">{username}</label>
                 <input
                   type="text"
-                  id="username"
+                  id="custom-username"
                   min="3"
                   max="40"
                   placeholder={usernamePlaceholder}
                   {...register("username", validOptions.username)}
                 />
-                <small className="text-danger">
+                <small class="custom-text-danger">
                   {errors?.username && errors.username.message}
                 </small>
               </div>
             )}
 
             {email && (
-              <div className="form-group">
-                <label htmlFor="email">{email}</label>
+              <div class="custom-form-group">
+                <label for="custom-email">{email}</label>
                 <input
                   max="40"
                   type="email"
-                  id="email"
+                  id="custom-email"
                   placeholder={emailPlaceholder}
                   {...register("email", validOptions.email)}
                 />
-                <small className="text-danger">
+                <small class="custom-text-danger">
                   {errors?.email && errors.email.message}
                 </small>
               </div>
             )}
 
             {password && (
-              <div className="form-group">
-                <label htmlFor="password">{password}</label>
+              <div class="custom-form-group">
+                <label for="custom-password">{password}</label>
                 <input
                   max="40"
                   type="password"
-                  id="password"
+                  id="custom-password"
                   {...register("password", validOptions.password)}
                 />
 
                 {page === "signin" && errors.password && (
                   <>
                     {errors.password.type === "required" && (
-                      <small className="text-danger">mot de passe requis</small>
+                      <small class="custom-text-danger">
+                        mot de passe requis
+                      </small>
                     )}
                   </>
                 )}
@@ -116,21 +118,21 @@ const Form = (props) => {
             )}
 
             {passwordConfirmation && (
-              <div className="form-group">
-                <label htmlFor="passwordConfirmation">
+              <div class="custom-form-group">
+                <label for="custom-passwordConfirmation">
                   {passwordConfirmation}
                 </label>
                 <input
                   type="password"
                   max="40"
-                  id="passwordConfirmation"
+                  id="custom-passwordConfirmation"
                   placeholder={passwordConfirmationPlaceholder}
                   {...register(
                     "password_confirmation",
                     validOptions.password_confirmation
                   )}
                 />
-                <small className="text-danger">
+                <small class="custom-text-danger">
                   {errors?.password_confirmation &&
                     errors.password_confirmation.message}
                 </small>
@@ -138,18 +140,18 @@ const Form = (props) => {
             )}
 
             {Conditions && (
-              <div className="form-group">
+              <div class="custom-form-group">
                 <input
                   type="checkbox"
                   max="40"
-                  id="accept_conditions"
+                  id="custom-accept_conditions"
                   {...register(
                     "accept_conditions",
                     validOptions.accept_conditions
                   )}
                 />
-                <label htmlFor="accept_conditions">{Conditions}</label>
-                <small className="text-danger">
+                <label for="custom-accept_conditions">{Conditions}</label>
+                <small class="custom-text-danger">
                   {errors?.accept_conditions &&
                     errors.accept_conditions.message}
                 </small>
@@ -157,15 +159,15 @@ const Form = (props) => {
             )}
 
             {button && (
-              <div className="form-group">
-                <button type="submit" className="submit-button">
+              <div class="custom-form-group">
+                <button type="submit" class="custom-submit-button">
                   {button}
                 </button>
               </div>
             )}
           </form>
           {page === "signin" && (
-            <div className="signp-link">
+            <div class="custom-signup-link">
               <span>
                 <h6>pas encore enregistré ?</h6>
                 <Link to="/signup">Sign up</Link>
